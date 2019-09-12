@@ -60,6 +60,11 @@ func RemoveNewLinesAndWhiteSpace(str string) string {
 	return strings.Trim(strings.Trim(str, "\n"), `"`)
 }
 
+func GetFilenameExtension(filename string) string {
+	splitted := strings.Split(filename, ".")
+	return splitted[len(splitted)-1]
+}
+
 /* databases */
 
 func GetID(result sql.Result) int {
