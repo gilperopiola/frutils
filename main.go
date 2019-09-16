@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+
+	"github.com/gin-gonic/gin"
 )
 
 /* gin */
@@ -58,6 +60,10 @@ func RemoveAllCharactersBefore(str string, separator string) string {
 
 func RemoveNewLinesAndWhiteSpace(str string) string {
 	return strings.Trim(strings.Trim(str, "\n"), `"`)
+}
+
+func RemoveExteriorSquareBrackets(str string) string {
+	return strings.TrimSuffix(strings.TrimSuffix(strings.TrimPrefix(str, "["), "\n"), "]")
 }
 
 func GetFilenameExtension(filename string) string {
