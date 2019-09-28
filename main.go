@@ -48,6 +48,14 @@ func ToBool(s string) bool {
 	return strings.TrimSpace(s) == "true" || strings.TrimSpace(s) == "1" || strings.TrimSpace(s) == "TRUE"
 }
 
+func DateToString(date time.Time) string {
+	return date.Format("2006-01-02")
+}
+
+func DateToStringFull(date time.Time) string {
+	return date.Format("2006-01-02T15:04:05-07:00")
+}
+
 /* dates */
 func GetDaysBetween(date1 time.Time, date2 time.Time) int {
 	return int(date1.Sub(date2).Hours() / 24)
