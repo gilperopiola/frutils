@@ -43,6 +43,10 @@ func BoolToString(b bool) string {
 	return "false"
 }
 
+func ToBool(s string) bool {
+	return strings.TrimSpace(s) == "true" || strings.TrimSpace(s) == "1" || strings.TrimSpace(s) == "TRUE"
+}
+
 /* string manipulations */
 
 func RemoveAllCharactersBefore(str string, separator string) string {
