@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -45,6 +46,11 @@ func BoolToString(b bool) string {
 
 func ToBool(s string) bool {
 	return strings.TrimSpace(s) == "true" || strings.TrimSpace(s) == "1" || strings.TrimSpace(s) == "TRUE"
+}
+
+/* dates */
+func GetDaysBetween(date1 time.Time, date2 time.Time) int {
+	return int(date1.Sub(date2).Hours() / 24)
 }
 
 /* string manipulations */
