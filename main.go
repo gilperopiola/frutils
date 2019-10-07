@@ -56,6 +56,10 @@ func DateToStringFull(date time.Time) string {
 	return date.Format("2006-01-02T15:04:05-07:00")
 }
 
+func IntToAlphabetPosition(i int) string {
+    return string('A' - 1 + i)
+}
+
 /* dates */
 func GetDaysBetween(date1 time.Time, date2 time.Time) int {
 	return int(date1.Sub(date2).Hours() / 24)
