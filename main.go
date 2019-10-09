@@ -22,6 +22,10 @@ func GetToken(c *gin.Context) string {
 	return strings.Trim(strings.TrimSuffix(c.Request.Header.Get("Authorization"), "\n"), `"`)
 }
 
+func GetRequestIP(c *gin.Context) string {
+	return c.Request.RemoteAddr
+}
+
 /* type conversions */
 
 func ToString(i int) string {
@@ -57,7 +61,7 @@ func DateToStringFull(date time.Time) string {
 }
 
 func IntToAlphabetPosition(i int) string {
-    return string('A' - 1 + i)
+	return string('A' - 1 + i)
 }
 
 /* dates */
