@@ -12,6 +12,14 @@ func GetID(result sql.Result) int {
 	return int(id)
 }
 
+func GetOrderByString(field, direction string) string {
+	if field != "" && direction != "" {
+		return field + " " + direction
+	}
+
+	return "id ASC"
+}
+
 func GetQueryString(query string, args ...interface{}) string {
 	var buffer bytes.Buffer
 	nArgs := len(args)
