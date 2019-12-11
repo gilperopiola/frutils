@@ -42,11 +42,6 @@ func IntToAlphabetPosition(i int) string {
 	return string('A' - 1 + i)
 }
 
-/* dates */
-func GetDaysBetween(date1 time.Time, date2 time.Time) int {
-	return int(date1.Sub(date2).Hours() / 24)
-}
-
 /* misc */
 func WrapMultipleValues(values ...interface{}) []interface{} {
 	return values
